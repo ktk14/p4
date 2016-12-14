@@ -10,41 +10,41 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+/* Oil Resource */
+# Index page to show all the oils
+Route::get('/oils', 'OilController@index')->name('oils.index');//->middleware('auth');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/debug', function() {
+# Show a form to create a new oil
+Route::get('/oils/create', 'OilController@create')->name('oils.create');//->middleware('auth');
 
-    echo '<pre>';
+# Process the form to create a new oil
+Route::post('/oils', 'OilController@store')->name('oils.store');
 
-    echo '<h1>Environment</h1>';
-    echo App::environment().'</h1>';
+# Show an individual oil
+Route::get('/oils/{name}', 'OilController@show')->name('oils.show');
 
-    echo '<h1>Debugging?</h1>';
-    if(config('app.debug')) echo "Yes"; else echo "No";
+# Show form to edit an oil
+Route::get('/oils/{id}/edit', 'OilController@edit')->name('oils.edit');
 
-    echo '<h1>Database Config</h1>';
-    /*
-    The following line will output your MySQL credentials.
-    Uncomment it only if you're having a hard time connecting to the database and you
-    need to confirm your credentials.
-    When you're done debugging, comment it back out so you don't accidentally leave it
-    running on your live server, making your credentials public.
-    */
-    //print_r(config('database.connections.mysql'));
+# Process form to edit an oil
+Route::put('/oils/{id}', 'OilController@update')->name('oils.update');
 
-    echo '<h1>Test Database Connection</h1>';
-    try {
-        $results = DB::select('SHOW DATABASES;');
-        echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
-        echo "<br><br>Your Databases:<br><br>";
-        print_r($results);
-    }
-    catch (Exception $e) {
-        echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n";
-    }
+# Get route to confirm deletion of oil
+Route::get('/oils/{id}/delete', 'OilController@delete')->name('oils.destroy');
 
-    echo '</pre>';
+# Delete route to actually destroy the oil
+Route::delete('/oils/{id}', 'OilController@destroy')->name('oils.destroy');
 
-});
+/* Order Resource */
+# Index page to show all the orders
+Route::get('/orders', 'OrderController@index')->name('orders.index');//->middleware('auth');
+
+# Show an individual order with associated oils
+Route::get('/orders/{title}', 'OrderController@show')->name('orders.show');
+
+/* Homepage */
+Route::get('/', 'PageController@welcome');
+
+Auth::routes();
+//Route::get('/logout','Auth\LoginController@logout')->name('logout');
+Route::get('/home', 'HomeController@index');
