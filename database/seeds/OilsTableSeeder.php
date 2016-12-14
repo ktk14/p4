@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use \App\Order;
 
 class OilsTableSeeder extends Seeder
 {
@@ -11,25 +12,33 @@ class OilsTableSeeder extends Seeder
     */
     public function run()
     {
+        $order_id = Order::where('title','=','Okay')->pluck('id')->first();
         DB::table('oils')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Frankincense',
+            'order_id' => $order_id,
         ]);
+        $order_id = Order::where('title','=','Next Month')->pluck('id')->first();
         DB::table('oils')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Jade Lemon',
+            'order_id' => $order_id,
         ]);
+        $order_id = Order::where('title','=','Never Again')->pluck('id')->first();
         DB::table('oils')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Myrrh',
+            'order_id' => $order_id,
         ]);
+        $order_id = Order::where('title','=','Okay')->pluck('id')->first();
         DB::table('oils')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Brain Power',
+            'order_id' => $order_id,
         ]);
     }
 }
