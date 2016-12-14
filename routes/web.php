@@ -46,5 +46,4 @@ Route::get('/orders/{title}', 'OrderController@show')->name('orders.show');
 Route::get('/', 'PageController@welcome');
 
 Auth::routes();
-//Route::get('/logout','Auth\LoginController@logout')->name('logout');
-Route::get('/home', 'HomeController@index');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');

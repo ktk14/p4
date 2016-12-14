@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use \App\Order;
+use \App\User;
 
 class OilsTableSeeder extends Seeder
 {
