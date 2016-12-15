@@ -6,16 +6,16 @@
 
 @section('content')
 
-    <h1>Confirm Deletion of Oil</h1>
+    <h1>Confirm Deletion of Essential Oil</h1>
     <form method='POST' action='/oils/{{ $oil->id }}'>
 
         {{ method_field('DELETE') }}
 
         {{ csrf_field() }}
 
-        <h2>Are you sure you want to delete <em>{{ $oil->name }}</em>?</h2>
+        <h2>Are you sure you want to delete <b>{{ $oil->name }}</b>?</h2>
 
-        <input type='submit' value='Yes'>
+        <button type="submit" class="btn btn-primary" value='Yes'>Yes</button>
 
     </form>
 

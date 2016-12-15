@@ -38,12 +38,17 @@ footer {
     bottom:0;
     height:30px;
     width:100%;
-    background-color:#ccc;
+    background-color:#ACBF80;
     text-align:center;
     padding:5px;
 }
 /* End Sticky Footer */
-
+#right {
+    position:absolute;
+    top:200px;
+    right:0;
+    margin-right:40px;
+}
 .logo {
     max-width:300px;
     max-height:250px;
@@ -59,9 +64,9 @@ section, header, nav {
     }
 }
 
-a:link {
+a {
     text-decoration:underline;
-	color:#55828B;
+	color:#55828b;
 }
 
 nav {
@@ -76,17 +81,19 @@ nav ul {
 
 nav ul li {
     display:inline;
-
     background-color:#ebf6d1;
     padding:5px;
     margin-right:5px;
+    font-size:18px;
 }
 
-footer a:link, nav a:link {
+footer a, nav a {
     text-decoration:none;
 	color:#55828b;
 }
-
+h1 {
+    color:#668523;
+}
 /* Forms */
 input[type=text],input[type=password],select {
     width:300px;
@@ -109,4 +116,8 @@ input[type=text],input[type=password],select {
     top:0;
     left:0;
     background-color:#e5ffaa;
+}
+
+.btn-primary {
+    background:
 }

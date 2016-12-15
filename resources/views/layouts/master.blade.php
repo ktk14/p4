@@ -28,39 +28,48 @@
 	@if(Session::get('flash_message') != null)
 		<div class='flash_message'>{{ Session::get('flash_message') }}</div>
 	@endif
-
+	<!--
 	<header>
-		<a href='/'>
-			<img src='/images/logo.jpg' alt='EOKeeper Logo' class='logo'>
-		</a>
-	</header>
-
-	<nav>
-		<ul>
+	<a href='/'>
+	<img src='/images/logo.jpg' alt='EOKeeper Logo' class='logo'>
+</a>
+</header>
+-->
+<nav>
+	<ul>
+		<li>
+			<a href='/'>
+				<img src='/images/logo.jpg' alt='EOKeeper Logo' class='logo'>
+			</a>
+		</li>
+		<div id='right'>
 			@if(Auth::check())
 				<li><a href='/'>Home</a></li>
-				<li><a href='/oils/create'>Add an oil</a></li>
-				<li><a href='/logout'>Log out</a></li>
+				<li><a href='/oils/create'>Add an Oil</a></li>
+				<li><a href='/logout'>Log Out</a></li>
 			@else
 				<li><a href='/'>Home</a></li>
-				<li><a href='/login'>Log in</a></li>
+				<li><a href='/login'>Log In</a></li>
 				<li><a href='/register'>Register</a></li>
 			@endif
-		</ul>
-	</nav>
+		</div>
 
 
-	<section>
-		@yield('content')
-	</section>
 
-	<footer>
-		&copy; {{ date('Y') }} &nbsp;&nbsp;
-		<a href='http://p4.katielu.me' target='_blank'><i class='fa fa-link'></i> View Live</a> &nbsp;&nbsp;
-		<a href='http://p1.katielu.me' target='_blank'><i class='fa fa-link'></i> View P1 Index</a>
-	</footer>
+	</ul>
+</nav>
 
-	@yield('body')
+
+<section>
+	@yield('content')
+</section>
+
+<footer>
+	&copy; {{ date('Y') }} &nbsp;&nbsp;
+	<a href='http://p1.katielu.me' target='_blank'><i class='fa fa-link'></i> View P1 Index</a>
+</footer>
+
+@yield('body')
 
 </body>
 </html>
