@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use \App\User;
+use \App\Order;
+use \App\Oil;
 
 class OrderController extends Controller
 {
@@ -10,6 +14,18 @@ class OrderController extends Controller
 
 	public function index(Request $request)
 	{
+/*
+		$user = $request->user();
+        if($user) {
+            $oils = Oil::where('user_id', '=', $user->id)->orderBy('id', 'DESC')->get();
+        }
+        else {
+            $oils = [];
+        }
+        return view('order.index')->with([
+            'oils' => $oils
+        ]); */
+
 		$user = $request->user();
         if($user) {
             $oils = $user->oils()->get();
@@ -25,6 +41,7 @@ class OrderController extends Controller
             'oils' => $oils,
 			'oils_for_this_order' => $oils_for_this_order,
         ]);
+
 	}
 
 	public function show($id)

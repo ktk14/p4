@@ -46,6 +46,7 @@ footer {
 
 .logo {
     max-width:300px;
+    max-height:250px;
 }
 
 section, header, nav {
@@ -63,22 +64,27 @@ a:link {
 	color:#55828B;
 }
 
+nav {
+    background-color:#ebf6d1;
+}
 nav ul {
     list-style-type:none;
     margin:0;
     padding:0;
+    background-color:#ebf6d1;
+}
+
+nav ul li {
+    display:inline;
+
+    background-color:#ebf6d1;
+    padding:5px;
+    margin-right:5px;
 }
 
 footer a:link, nav a:link {
     text-decoration:none;
 	color:#55828b;
-}
-
-nav ul li {
-    display:inline;
-    background-color:#eee;
-    padding:5px;
-    margin-right:5px;
 }
 
 /* Forms */
@@ -95,7 +101,6 @@ input[type=text],input[type=password],select {
     list-style-type:none;
 }
 
-
 .flash_message {
     width:100%;
     text-align:center;
@@ -103,5 +108,5 @@ input[type=text],input[type=password],select {
     position:fixed;
     top:0;
     left:0;
-    background-color:#b1cc74;
+    background-color:#e5ffaa;
 }

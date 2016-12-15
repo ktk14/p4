@@ -7,26 +7,27 @@ use Illuminate\Database\Migrations\Migration;
 class CreateOilsTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::create('oils', function (Blueprint $table) {
 
-        $table->increments('id');
-        $table->timestamps();
-        $table->string('name');
+            $table->increments('id');
+            $table->timestamps();
+            $table->string('name');
+            $table->string('bottle');
 
-    });
+        });
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::drop('oils');

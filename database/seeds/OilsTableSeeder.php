@@ -18,6 +18,7 @@ class OilsTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Frankincense',
+            'bottle' => 'https://static.youngliving.com/productimages/large/3548.jpg',
             'order_id' => $order_id,
             'user_id' => 1,
         ]);
@@ -26,6 +27,7 @@ class OilsTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Jade Lemon',
+            'bottle' => 'https://static.youngliving.com/productimages/large/4685.jpg',
             'order_id' => $order_id,
             'user_id' => 1,
         ]);
@@ -34,6 +36,7 @@ class OilsTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Myrrh',
+            'bottle' => 'https://static.youngliving.com/productimages/large/3593.jpg',
             'order_id' => $order_id,
             'user_id' => 1,
         ]);
@@ -42,6 +45,7 @@ class OilsTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Brain Power',
+            'bottle' => 'https://static.youngliving.com/productimages/large/3313.jpg',
             'order_id' => $order_id,
             'user_id' => 1,
         ]);

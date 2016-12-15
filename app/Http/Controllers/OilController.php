@@ -21,7 +21,7 @@ class OilController extends Controller
     {
         $user = $request->user();
         if($user) {
-            $oils = $user->oils()->get();
+            $oils = Oil::where('user_id', '=', $user->id)->orderBy('id', 'DESC')->get();
         }
         else {
             $oils = [];
@@ -39,6 +39,7 @@ class OilController extends Controller
     public function create()
     {
         $orders_for_dropdown = Order::getForDropdown();
+        
         return view('oil.create')->with([
             'orders_for_dropdown' => $orders_for_dropdown,
         ]);
@@ -55,17 +56,19 @@ class OilController extends Controller
         # Validate
         $this->validate($request, [
             'name' => 'required|min:2',
+            'bottle' => 'required|url',
         ]);
 
         $name = $request->input('name');
 
         $oil = new Oil();
         $oil->name = $request->input('name');
+        $oil->bottle = $request->bottle;
         $oil->order_id = $request->order_id;
         $oil->user_id = $request->user()->id;
         $oil->save();
 
-        Session::flash('flash_message', 'Your oil '.$book->name.' was added.');
+        Session::flash('flash_message', 'Your oil '.$oil->name.' was added.');
 
         return redirect('/oils');
     }
@@ -81,7 +84,7 @@ class OilController extends Controller
         $oil = Oil::find($id);
 
         if(is_null($oil)) {
-            Session::flash('message', 'Oil not found');
+            Session::flash('message', 'Essential Oil not found');
             return redirect('/oils');
         }
         return view('oil.show')->with([
@@ -120,11 +123,13 @@ class OilController extends Controller
         # Validate
         $this->validate($request, [
             'name' => 'required|min:2',
+            'bottle' => 'required|url',
         ]);
 
         # find oil and update
         $oil = Oil::find($request->id);
         $oil->name = $request->name;
+        $oil->bottle = $request->bottle;
         $oil->order_id = $request->order_id;
         $oil->save();
 
@@ -150,12 +155,12 @@ class OilController extends Controller
         $oil = Oil::find($id);
 
         if(is_null($oil)) {
-            Session::flash('message','Oil not found.');
+            Session::flash('message','Essential Oil not found.');
             return redirect('/oils');
         }
 
         $oil->delete();
-        
+
         Session::flash('flash_message', $oil->name.' was deleted.');
         return redirect('/oils');
     }

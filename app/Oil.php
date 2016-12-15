@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Oil extends Model
 {
-	public function orders() {
+	public function order() {
 		return $this->belongsTo('App\Order');
 	}
 

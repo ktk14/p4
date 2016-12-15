@@ -6,16 +6,18 @@
 	</title>
 
 	<meta charset='utf-8'>
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
-	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'>
-	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
-	<link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css' rel='stylesheet'>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" href="{{ asset('/images/favicon.png') }}" >
+	<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}"/><![endif]-->
 
+	<!-- Styles -->
+	<!-- Bootstrap -->
+	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'>
+	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
+	<link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css' rel='stylesheet'>
+	<!-- Own styles -->
 	<link href='/css/eokeeper.css' type='text/css' rel='stylesheet'>
 
 	@yield('head')
