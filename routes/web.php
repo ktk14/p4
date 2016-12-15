@@ -12,10 +12,10 @@
 */
 /* Oil Resource */
 # Index page to show all the oils
-Route::get('/oils', 'OilController@index')->name('oils.index');//->middleware('auth');
+Route::get('/oils', 'OilController@index')->name('oils.index')->middleware('auth');
 
 # Show a form to create a new oil
-Route::get('/oils/create', 'OilController@create')->name('oils.create');//->middleware('auth');
+Route::get('/oils/create', 'OilController@create')->name('oils.create')->middleware('auth');
 
 # Process the form to create a new oil
 Route::post('/oils', 'OilController@store')->name('oils.store');

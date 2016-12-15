@@ -19,6 +19,7 @@ class OilsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Frankincense',
             'order_id' => $order_id,
+            'user_id' => 1,
         ]);
         $order_id = Order::where('title','=','Next Month')->pluck('id')->first();
         DB::table('oils')->insert([
@@ -26,6 +27,7 @@ class OilsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Jade Lemon',
             'order_id' => $order_id,
+            'user_id' => 1,
         ]);
         $order_id = Order::where('title','=','Never Again')->pluck('id')->first();
         DB::table('oils')->insert([
@@ -33,6 +35,7 @@ class OilsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Myrrh',
             'order_id' => $order_id,
+            'user_id' => 1,
         ]);
         $order_id = Order::where('title','=','Okay')->pluck('id')->first();
         DB::table('oils')->insert([
@@ -40,6 +43,7 @@ class OilsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Brain Power',
             'order_id' => $order_id,
+            'user_id' => 1,
         ]);
     }
 }
