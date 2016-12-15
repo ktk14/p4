@@ -1,5 +1,7 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
+@section('head')
+    @include('partials.authcrfhead')
+@stop
 @section('content')
 <div class="container">
     <div class="row">
@@ -50,7 +52,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary" style="background-color:#b1cc74;">
+                                <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
 
@@ -65,4 +67,5 @@
         </div>
     </div>
 </div>
+@include('partials.authfoot')
 @endsection

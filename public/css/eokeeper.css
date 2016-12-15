@@ -118,6 +118,15 @@ input[type=text],input[type=password],select {
     background-color:#e5ffaa;
 }
 
-.btn-primary {
-    background:
+.btn-primary, .btn-primary:active {
+    background-color:#6db265;
 }
+.btn-primary:hover, .btn-primary:visited, .btn-primary:focus {
+    background-color:#267415;
+}
+ .panel {
+     -webkit-box-shadow:none;
+ }
+ .panel-default > .panel-heading {
+     background-color:#9cd296;
+ }

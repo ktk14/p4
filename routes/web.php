@@ -35,13 +35,6 @@ Route::get('/oils/{id}/delete', 'OilController@delete')->name('oils.destroy');
 # Delete route to actually destroy the oil
 Route::delete('/oils/{id}', 'OilController@destroy')->name('oils.destroy');
 
-/* Order Resource */
-# Index page to show all the orders
-Route::get('/orders', 'OrderController@index')->name('orders.index');//->middleware('auth');
-
-# Show an individual order with associated oils
-Route::get('/orders/{title}', 'OrderController@show')->name('orders.show');
-
 /* Homepage */
 Route::get('/', 'PageController@welcome');
 

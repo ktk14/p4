@@ -1,6 +1,8 @@
 <?php
 
 namespace App;
+use \App\Order;
+use \App\Oil;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,4 +22,5 @@ class Order extends Model
 	   }
 	   return $orders_for_dropdown;
    }
+
 }

@@ -10,21 +10,24 @@ use \App\Oil;
 
 class OrderController extends Controller
 {
-    // Get oils associated with order
+    // Get orders associated with user
 
 	public function index(Request $request)
 	{
-/*
+
+
 		$user = $request->user();
         if($user) {
-            $oils = Oil::where('user_id', '=', $user->id)->orderBy('id', 'DESC')->get();
+			$orders = Order::where('user_id', '=', $user->id)->orderBy('title', 'ASC')->get();
         }
         else {
-            $oils = [];
+            $orders = [];
         }
         return view('order.index')->with([
-            'oils' => $oils
-        ]); */
+            'orders' => $orders
+        ]);
+
+/*
 
 		$user = $request->user();
         if($user) {
@@ -41,19 +44,20 @@ class OrderController extends Controller
             'oils' => $oils,
 			'oils_for_this_order' => $oils_for_this_order,
         ]);
-
+*/
 	}
 
 	public function show($id)
 	{
-		$
-		$oils = Oil::with('order')->get();
-		foreach($oils as $oil) {
-			$oil->order->title
+	/*
+		$order = Order::find($id);
+
+		if(is_null($order)) {
+			Session::flash('message', 'Order not found');
+			return redirect('/orders');
 		}
 		return view('order.show')->with([
 			'order' => $order,
-			'oil' => $oil,
-		]);
+		]);*/
 	}
 }
