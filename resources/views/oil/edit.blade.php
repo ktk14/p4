@@ -32,7 +32,7 @@
             <select name='order_id'>
                 @foreach($orders_for_dropdown as $order_id => $order)
                     <option
-                    {{ ($order_id == $order->order->id) ? 'SELECTED' : '' }}
+                    {{ ($order_id == $oil->order->id) ? 'SELECTED' : '' }}
                     value='{{ $order_id }}'
                     >{{ $order }}</option>
                 @endforeach

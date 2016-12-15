@@ -11,10 +11,10 @@ class Order extends Model
 	   return $this->hasMany('App\Oil');
    }
 
-   public static function getForDropDown() {
+   public static function getForDropdown() {
 	   $orders = Order::orderBy('title', 'ASC')->get();
 
-	   $orders_fordropdown = [];
+	   $orders_for_dropdown = [];
 	   foreach($orders as $order) {
 		   $orders_for_dropdown[$order->id] = $order->title;
 	   }

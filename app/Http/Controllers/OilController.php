@@ -39,9 +39,9 @@ class OilController extends Controller
     public function create()
     {
         $orders_for_dropdown = Order::getForDropdown();
-        
+
         return view('oil.create')->with([
-            'orders_for_dropdown' => $orders_for_dropdown,
+            'orders_for_dropdown' => $orders_for_dropdown
         ]);
     }
 
@@ -133,7 +133,7 @@ class OilController extends Controller
         $oil->order_id = $request->order_id;
         $oil->save();
 
-        Session::flash('flash_message', 'Your changes to'.$oil->name.' were saved.');
+        Session::flash('flash_message', 'Your changes to '.$oil->name.' were saved.');
         return redirect('/oils');
     }
 

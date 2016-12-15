@@ -22,7 +22,7 @@
 				<a href='/oils/{{ $oil->id }}'><h2 class='truncate'>{{ $oil->name }}</h2></a>
 				<a href='/oils/{{ $oil->id }}'><img class='bottle' src='{{ $oil->bottle }}' alt='Bottle for {{ $oil->name }}'></a>
 
-					<h3 class='truncate'>{{ $oil->order->title }}</h3>
+					<h3 class='truncate'>Order? {{ $oil->order->title }}</h3>
 
 					<a class='button' href='/oils/{{ $oil->id }}/edit'><i class='fa fa-pencil'></i> Edit</a>
 					<a class='button' href='/oils/{{ $oil->id }}'><i class='fa fa-eye'></i> View</a>
