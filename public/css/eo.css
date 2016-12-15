@@ -1,0 +1,57 @@
+.oil {
+    border:1px solid #ccc;
+    margin-right:10px;
+    margin-bottom:10px;
+    float:left;
+    padding:10px;
+    height:300px;
+    width:25%;
+    min-width:250px;
+}
+
+.orders {
+    margin-top:3px;
+}
+
+.order {
+    background-color:#eee;
+    margin-bottom:5px;
+    display:inline-block;
+    padding:3px;
+    text-transform: uppercase;
+    font-size:.7em;
+}
+
+.truncate {
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+
+    .logo {
+        width:100%;
+    }
+}
+
+#oils {
+    margin-bottom:10px;
+}
+
+.oil h2 {
+    font-size:1.2em;
+    margin:4px 0 4px 0;
+}
+
+a:link h2 {
+    text-decoration:underline;
+	color:
+}
+
+.oil h3 {
+    font-size:1em;
+    margin:4px 0 4px 0;
+    font-style:italic;
+}
